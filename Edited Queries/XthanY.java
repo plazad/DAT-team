@@ -54,7 +54,7 @@ public class XthanY extends Thread{
 		int yTemp = 0;
 		
 		for (int i = start; i<end; i++){ //Iterate through the lines and for each line with x we +1 xViews
-			System.out.println("Length: " + finalArr.length);
+			//Test Print: System.out.println("Length: " + finalArr.length);
 	
 			xTemp = finalArr[i][x];
 			yTemp = finalArr[i][y];
