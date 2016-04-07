@@ -28,13 +28,17 @@ public class XthanY extends Thread{
 	private int[][] finalArr;
 	private int x;
 	private int y;
+	private int start;
+	private int end;
 	
-	public XthanY (int[][] finalArr, int x, int y){
+	public XthanY (int[][] finalArr, int x, int y, int start, int end ){
 		
 		
 		this.finalArr = finalArr;
 		this.x = x;
 		this.y = y;
+		this.start = start;
+		this.end = end;
 		
 		}//END of constructor
 	
@@ -49,7 +53,7 @@ public class XthanY extends Thread{
 		int xTemp = 0;
 		int yTemp = 0;
 		
-		for (int i = 0; i<finalArr.length; i++){ //Iterate through the lines and for each line with x we +1 xViews
+		for (int i = start; i<end; i++){ //Iterate through the lines and for each line with x we +1 xViews
 			System.out.println("Length: " + finalArr.length);
 	
 			xTemp = finalArr[i][x];
@@ -60,7 +64,7 @@ public class XthanY extends Thread{
 			}
 			
 			
-	}//END of run()
+	}//END of run() 
 	
 	
 	public int getXthanY(){

@@ -1,4 +1,3 @@
-
 package dataProject;
 
 /**
@@ -27,12 +26,16 @@ public class Xtimes extends Thread{
 	private int[][] finalArr;
 	private int x;
 	private int numViews;
+	private int start;
+	private int end;
 	
-	public Xtimes (int[][] finalArr, int x, int numViews){
+	public Xtimes (int[][] finalArr, int x, int numViews, int start, int end){
 		
 		this.finalArr = finalArr;
 		this.x = x;
 		this.numViews = numViews;
+		this.start = start;
+		this.end = end;
 		
 	}//END of Constructor
 	
@@ -47,7 +50,7 @@ public class Xtimes extends Thread{
 		
 		int xTemp = 0;
 			
-		for (int i = 0; i<finalArr.length; i++){ //Iterate through the stored sums of pages for each line
+		for (int i = start; i<end; i++){ //Iterate through the stored sums of pages for each line
 			
 			xTemp = finalArr[i][x];
 			//Test print: System.out.println("xTemp: " + xTemp);
