@@ -1,4 +1,3 @@
-
 package dataProject;
 
 /**
@@ -9,8 +8,7 @@ package dataProject;
  *
  */
 public class Xtimes extends Thread{
-	
-	
+		
 	/**
 	 * The user will input a page type X as well as a number of times the
 	 * page was viewed. This method will iterate through the array and 
@@ -18,7 +16,7 @@ public class Xtimes extends Thread{
 	 * of times!
 	 * 
 	 * @param finalArr
-	 * @param X
+	 * @param x
 	 * @param numViews
 	 * @return xSum 
 	 */
@@ -36,24 +34,23 @@ public class Xtimes extends Thread{
 		
 	}//END of Constructor
 	
-	
-	public static synchronized void xSUM(){ //Allows for multiple threads to continue to add to 'xSum' 
-
-		xSum++;
+	public static synchronized void xSUM(){ //this method allows for multiple threads to join their answer
+		
+		xSum++; //adds one to count
 		//Test print: System.out.println("xSum: " + xSum);
 	}
 	
 	public void run(){
 		
 		int xTemp = 0;
-			
+		
 		for (int i = 0; i<finalArr.length; i++){ //Iterate through the stored sums of pages for each line
 			
 			xTemp = finalArr[i][x];
 			//Test print: System.out.println("xTemp: " + xTemp);
 			
 			if(xTemp == numViews){
-				xSUM(); //calls synchronized method
+				xSUM(); //calling synchronized method to add to count
 			} else {
 				xSum += 0;
 			}//end of if-else
